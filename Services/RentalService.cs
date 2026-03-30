@@ -9,7 +9,9 @@ public class RentalService
     {
         if(!equipment.IsAvailable)
             throw new ArgumentException("Equipment is not available");
-
+        var activeRentals = rentals.Count(r => r.User == user && r.ReturnDate == null);
+        if (activeRentals >= user.MaxRentals)
+            throw new ArgumentException("Rental is full");
         var rental = new Rental
         {
             User = user,
