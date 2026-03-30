@@ -32,7 +32,6 @@ public class RentalService
             Console.WriteLine("Late rental - Penalty imposed");
         }
     }
-
     public List<Rental> GetActiveRentals(User user)
     {
         return rentals
