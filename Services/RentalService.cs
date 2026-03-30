@@ -22,7 +22,6 @@ public class RentalService
         rentals.Add(rental);
         equipment.IsAvailable = false;
     }
-
     public void ReturnEquipment(Rental rental)
     {
         rental.ReturnDate = DateTime.Now;
