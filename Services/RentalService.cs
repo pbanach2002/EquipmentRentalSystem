@@ -22,4 +22,15 @@ public class RentalService
         rentals.Add(rental);
         equipment.IsAvailable = false;
     }
+
+    public void ReturnEquipment(Rental rental)
+    {
+        rental.ReturnDate = DateTime.Now;
+        rental.Equipment.IsAvailable = true;
+
+        if (rental.isLate)
+        {
+            Console.WriteLine("Late rental - Penalty imposed");
+        }
+    }
 }
